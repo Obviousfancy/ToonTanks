@@ -14,6 +14,19 @@ class TOONTANKS_API ABasePawn : public APawn
 public:
 	// Sets default values for this pawn's properties
 	ABasePawn();
+	
+	UPROPERTY(VisibleAnywhere)	//Macro para declarar una variable miembro de la clase, visible en el editor de propiedades, solo lectura, y en la categoría "Componentes"
+	//Variables miembro de la clase
+	int32 VisibleAnywhereInt = 12;	//Variable miembro de la clase, visible en el editor de propiedades, de tipo entero de 32 bits, con un valor inicial de 12
+
+	UPROPERTY(EditAnywhere)	//Macro para declarar una variable miembro de la clase, visible en el editor de propiedades, solo lectura, y en la categoría "Componentes"
+	int32 EditAnywhereInt = 12;	//Variable miembro de la clase, visible en el editor de propiedades, de tipo entero de 32 bits, con un valor inicial de 12
+
+	UPROPERTY(VisibleInstanceOnly)	//Macro para declarar una variable miembro de la clase, visible en el editor de propiedades, solo lectura, y en la categoría "Componentes"
+	int32 VisibleInstanceOnlyInt = 12;	//Variable miembro de la clase, visible en el editor de propiedades, de tipo entero de 32 bits, con un valor inicial de 12
+
+	UPROPERTY(EditInstanceOnly)	//Macro para declarar una variable miembro de la clase, visible en el editor de propiedades, solo lectura, y en la categoría "Componentes"
+	FVector InstancePosition;
 
 protected:
 	// Called when the game starts or when spawned

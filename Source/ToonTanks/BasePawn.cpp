@@ -23,6 +23,9 @@ ABasePawn::ABasePawn()
 	//Creación de un componente de escena para el punto de generación de proyectiles
 	projectileSpawnPoint = CreateDefaultSubobject<USceneComponent>(TEXT("Projectile Spawn Point"));		//Creación de un componente de escena
 	projectileSpawnPoint->SetupAttachment(turretMesh);		//Establecemos el componente de escena como hijo del componente de malla estática de la torreta
+
+
+	
 }
 
 // Called when the game starts or when spawned
@@ -36,6 +39,9 @@ void ABasePawn::BeginPlay()
 void ABasePawn::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
+
+	InstancePosition = GetActorLocation();		//Obtenemos la posición del objeto en el mundo y la almacenamos en la variable miembro InstancePosition
+
 
 }
 
