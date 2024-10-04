@@ -6,7 +6,7 @@
 #include "GameFramework/Pawn.h"
 #include "BasePawn.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)	//Macro para declarar una clase de C++ que se puede extender en Blueprints
 class TOONTANKS_API ABasePawn : public APawn
 {
 	GENERATED_BODY()
@@ -44,17 +44,17 @@ private:
 	//Usaremos punteros para la mayoria de nuestras variables siempre que no sean tipos base, como int, float, double, etc.
 	//Esto debido a que los punteros son livianos, son solo direcciones de memoria, y no ocupan mucho espacio en memoria
 	//y nos permiten trabajar con objetos que se crean en tiempo de ejecución, Y PERMITEN SER EFICIENTES EN MEMORIA
-	UPROPERTY(EditAnywhere, Category = "Components", BlueprintReadWrite, meta = (AllowPrivateAccess = "true"))	//Macro para declarar una variable miembro de la clase, visible en el editor de propiedades, solo lectura, y en la categoría "Componentes"
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components", meta = (AllowPrivateAccess = "true"))	//Macro para declarar una variable miembro de la clase, visible en el editor de propiedades, solo lectura, y en la categoría "Componentes"
 		//Variables miembro de la clase
 	class UCapsuleComponent* capsuleComp;	//Declaración directa de clase, no se necesita incluir el archivo de cabecera de la clase, solo estamos declarando la clase
 
-	UPROPERTY(EditAnywhere,BlueprintReadWrite,Category = "Components",meta = (AllowPrivateAccess = "true"))	//Macro para declarar una variable miembro de la clase, visible en el editor de propiedades, solo lectura, y en la categoría "Componentes"
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components", meta = (AllowPrivateAccess = "true"))	//Macro para declarar una variable miembro de la clase, visible en el editor de propiedades, solo lectura, y en la categoría "Componentes"
 		//Variables miembro de la clase
 	UStaticMeshComponent* baseMesh;	//Declaración directa de clase, no se necesita incluir el archivo de cabecera de la clase, solo estamos declarando la clase
-	UPROPERTY(EditAnywhere, Category = "Components", BlueprintReadWrite,meta = (AllowPrivateAccess = "true"))	//Macro para declarar una variable miembro de la clase, visible en el editor de propiedades, solo lectura, y en la categoría "Componentes"
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components", meta = (AllowPrivateAccess = "true"))	//Macro para declarar una variable miembro de la clase, visible en el editor de propiedades, solo lectura, y en la categoría "Componentes"
 		//Variables miembro de la clase
 	UStaticMeshComponent* turretMesh;	//Declaración directa de clase, no se necesita incluir el archivo de cabecera de la clase, solo estamos declarando la clase
-	UPROPERTY(EditAnywhere, Category = "Components", BlueprintReadWrite, meta = (AllowPrivateAccess = "true"))	//Macro para declarar una variable miembro de la clase, visible en el editor de propiedades, solo lectura, y en la categoría "Componentes"
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Components", meta = (AllowPrivateAccess = "true"))	//Macro para declarar una variable miembro de la clase, visible en el editor de propiedades, solo lectura, y en la categoría "Componentes"
 		//Variables miembro de la clase
 	USceneComponent* projectileSpawnPoint;	//Declaración directa de clase, no se necesita incluir el archivo de cabecera de la clase, solo estamos declarando la clase
 
