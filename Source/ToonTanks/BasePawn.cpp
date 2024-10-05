@@ -40,15 +40,9 @@ void ABasePawn::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
-	InstancePosition = GetActorLocation();		//Obtenemos la posición del objeto en el mundo y la almacenamos en la variable miembro InstancePosition
-
-
-}
-
-// Called to bind functionality to input
-void ABasePawn::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
-{
-	Super::SetupPlayerInputComponent(PlayerInputComponent);
+	
 
 }
+
+
 
